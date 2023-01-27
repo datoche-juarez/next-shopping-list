@@ -1,6 +1,7 @@
 import Meta from '../components/Meta'
 import Link from 'next/link'
 
+
 const about = () => {
     return (
         <div>

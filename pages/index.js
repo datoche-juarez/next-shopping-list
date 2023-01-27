@@ -13,7 +13,7 @@ export default function Home() {
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
+          Welcome to your <a href="https://nextjs.org">Vinyl Shopping List</a>
         </h1>
 
         <p className={styles.description}>
@@ -68,7 +68,7 @@ export default function Home() {
       </footer>
 
 
-      
+
     </div>
   )
 }

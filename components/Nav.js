@@ -1,21 +1,54 @@
-import Link from 'next/link'
+import Link from "next/link";
+import {
+  Box,
+  Button,
+  ButtonGroup,
+  Flex,
+  IconButton,
+  Stack,
+  useTheme,
+  useColorMode,
+} from "@chakra-ui/react";
 
 const Nav = () => {
-    return (
-        <nav>
-            <ul>
-                <li>
-                    <Link href="/">Home</Link>
-                </li>
-                <li>
-                    <Link href="/about">About</Link>
-                </li>
-                <li>
-                    <Link href="/vinyl">Vinyl List</Link>
-                </li>
-            </ul>
-        </nav>
-    )
-}
+  return (
+    <Flex
+      as="nav"
+      align="center"
+      justify="space-between"
+      wrap="wrap"
+      w="100%"
+      mb={8}
+      p={8}
+      bg={["transparent", "transparent", "transparent", "transparent"]}
+      color={["white", "white", "primary.700", "primary.700"]}
+    >
+      <Stack
+        spacing={8}
+        align="center"
+        display="flex"
+        justifyContent={["center", "space-around", "flex-end", "flex-end"]}
+        direction={["column", "row", "row", "row"]}
+        pt={[0, 1, 1, 1]}
+      >
+        <Link href="/">
+          <Button color="primary.500" width="100%">
+            Home
+          </Button>
+        </Link>
+        <Link href="/about">
+          <Button color="primary.500" width="100%">
+            About
+          </Button>
+        </Link>
+        <Link href="/vinyl">
+          <Button color="primary.500" width="100%">
+            Vinyl List
+          </Button>
+        </Link>
+      </Stack>
+    </Flex>
+  );
+};
 
-export default Nav
+export default Nav;
