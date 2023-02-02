@@ -1,12 +1,7 @@
 import Meta from "../components/Meta";
 import Link from "next/link";
 
-import {
-  Box,
-  Button,
-  Text,
-  Stack,
-} from "@chakra-ui/react";
+import { Box, Button, Text, Stack } from "@chakra-ui/react";
 
 const about = () => {
   return (

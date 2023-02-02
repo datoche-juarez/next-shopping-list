@@ -158,7 +158,7 @@ export const newTheme = extendTheme({
     global: {
       body: {
         bg: "bgGray.main",
-        color: "secondary.50"
+        color: "secondary.50",
       },
     },
   },
