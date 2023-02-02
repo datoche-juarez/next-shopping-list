@@ -32,17 +32,17 @@ const Nav = () => {
         pt={[0, 1, 1, 1]}
       >
         <Link href="/">
-          <Button color="primary.500" width="100%">
+          <Button variant="primary" width="100%">
             Home
           </Button>
         </Link>
         <Link href="/about">
-          <Button color="primary.500" width="100%">
+          <Button variant="primary"  width="100%">
             About
           </Button>
         </Link>
         <Link href="/vinyl">
-          <Button color="primary.500" width="100%">
+          <Button variant="primary"  width="100%">
             Vinyl List
           </Button>
         </Link>

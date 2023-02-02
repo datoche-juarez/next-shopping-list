@@ -153,9 +153,19 @@ export const newTheme = extendTheme({
       900: "#090911",
     },
   },
+  //Set background color to bgGray.main
+  styles: {
+    global: {
+      body: {
+        bg: "bgGray.main",
+        color: "secondary.50"
+      },
+    },
+  },
   fonts: {
     heading: `Roboto, ${base.fonts?.heading}`,
     body: `Lato, ${base.fonts?.body}`,
+    color: "white",
   },
   components: {
     Button,

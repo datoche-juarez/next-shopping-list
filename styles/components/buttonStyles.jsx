@@ -9,10 +9,10 @@ export const ButtonStyles = {
   variants: {
     primary: () => ({
       bg: "primary.main",
-      color: "white",
+      color: "black",
       m: 2,
       _hover: {
-        bg: "primary.200",
+        bg: "primary.100",
         boxShadow: "md",
       },
     }),
