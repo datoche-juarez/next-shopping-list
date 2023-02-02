@@ -1,18 +1,13 @@
-import Meta from '../components/Meta'
-import Link from 'next/link'
+import Meta from "../components/Meta";
+import Link from "next/link";
 
-import {
-    Box,
-    Button,
-    Text,
-    Stack,
-  } from "@chakra-ui/react";
+import { Box, Button, Text, Stack } from "@chakra-ui/react";
 
 const vinyl = () => {
-    return (
-        <div>
-            <Meta title='Vinyl List' />
-            <Stack>
+  return (
+    <div>
+      <Meta title="Vinyl List" />
+      <Stack p="32px">
         <Text as="b" fontSize="4xl">
           Vinyl List
         </Text>
@@ -25,8 +20,8 @@ const vinyl = () => {
           </Link>
         </Box>
       </Stack>
-        </div>
-    )
-}
+    </div>
+  );
+};
 
-export default vinyl
+export default vinyl;

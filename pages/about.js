@@ -12,7 +12,7 @@ const about = () => {
   return (
     <div as="flex" color="primary.main">
       <Meta title="About" />
-      <Stack>
+      <Stack p="32px">
         <Text as="b" fontSize="4xl">
           About
         </Text>
