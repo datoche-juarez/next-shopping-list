@@ -1,6 +1,6 @@
 const Header = () => {
     return (
-        <div>
+        <div style={{ padding: "10px", textAlign: "center" }}>
             <h1>
                 <span>Vinyl Shopping List</span>
             </h1>
