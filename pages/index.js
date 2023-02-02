@@ -60,7 +60,7 @@ export default function Home() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <span >
+          <span>
             <Image src="/DajLogo3.png" alt="DAJ logo" width={72} height={16} />
           </span>
         </a>
