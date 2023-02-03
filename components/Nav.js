@@ -46,6 +46,11 @@ const Nav = () => {
             Vinyl List
           </Button>
         </Link>
+        <Link href="/users">
+          <Button variant="primary"  width="100%">
+            Users
+          </Button>
+        </Link>
       </Stack>
     </Flex>
   );
