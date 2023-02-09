@@ -46,11 +46,11 @@ const Nav = () => {
             Vinyl List
           </Button>
         </Link>
-        <Link href="/users">
+        {/* <Link href="/users">
           <Button variant="primary"  width="100%">
             Users
           </Button>
-        </Link>
+        </Link> */}
         <Link href="/examples">
           <Button variant="primary"  width="100%">
             Examples
