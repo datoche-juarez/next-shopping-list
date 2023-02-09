@@ -96,7 +96,7 @@ const vinyl = ({ users }) => {
         <Text as="b" fontSize="4xl">
           Vinyl List
         </Text>
-        <Box boxShadow="xl" borderRadius="6" p="8" backgroundColor="bgGray.500">
+        <Box boxShadow="xl" borderRadius="6" p="8" backgroundColor="bgGray.500" border="1px solid black">
           <Box mt="10px" mb="10px">
             <Text as="b" fontSize="2xl">
               Playlist Info

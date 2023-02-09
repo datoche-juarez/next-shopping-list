@@ -11,7 +11,7 @@ const examples = () => {
         <Text as="b" fontSize="4xl">
           Examples
         </Text>
-        <Box boxShadow="xl" borderRadius="6" p="8" backgroundColor="bgGray.500">
+        <Box boxShadow="xl" borderRadius="6" p="8" backgroundColor="bgGray.500" border="1px solid black">
           <Text fontSize={{ sm: "xl", md: "2xl" }}>
             Examples section goes here...
           </Text>
