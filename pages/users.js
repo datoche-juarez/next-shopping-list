@@ -1,5 +1,6 @@
 import Meta from "../components/Meta";
 import Link from "next/link";
+import User from "../components/User";
 
 import { Box, Button, Text, Stack } from "@chakra-ui/react";
 
@@ -10,8 +11,7 @@ function UserList({ users }) {
       {users.map((user) => {
         return (
           <div key={user.id}>
-            <p>{user.name}</p>
-            <p>{user.email}</p>
+            <User user={user} />
           </div>
         );
       })}
