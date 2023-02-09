@@ -10,7 +10,7 @@ const vinyl = ({ users }) => {
   const clientSecret = creds.clientSecret;
 
   const [userId, setUserId] = useState(creds.userId);
-  const [playlistId, setplaylistId] = useState("3wWii5mrFLbS1uLvFJdgFO");
+  const [playlistId, setplaylistId] = useState("64YuijCsO47lbVgdDhser0");
   const [token, setToken] = useState("");
   const [playlistInfo, setPlaylistInfo] = useState("");
   const [userInfo, setUserInfo] = useState("");
@@ -97,18 +97,23 @@ const vinyl = ({ users }) => {
           Vinyl List
         </Text>
         <Box boxShadow="xl" borderRadius="6" p="8" backgroundColor="bgGray.500">
-          <Text fontSize={{ sm: "xl", md: "2xl" }}>
-            Vinyl shopping list goes here...
-          </Text>
-          <h1>List of users</h1>
-          {users.map((user) => {
-            return (
-              <div key={user.id}>
-                <p>{user.name}</p>
-                <p>{user.email}</p>
+          <div>
+            <Text as="b" fontSize="2xl">
+              Playlist Info
+            </Text>
+            {playlistInfo && (
+              <div>
+                {playlistInfo.images && (
+                  <img src={playlistInfo.images[0].url} />
+                )}
+                <Text>Title: {playlistInfo.name}</Text>
+                {playlistInfo.description && (
+                  <Text>Description: {playlistInfo.description}</Text>
+                )}
+                <Text>Owner: {playlistInfo.owner.display_name}</Text>
               </div>
-            );
-          })}
+            )}
+          </div>
           <Button variant="primary" onClick={_getToken}>
             Fetch token
           </Button>
