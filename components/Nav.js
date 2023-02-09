@@ -51,6 +51,11 @@ const Nav = () => {
             Users
           </Button>
         </Link>
+        <Link href="/examples">
+          <Button variant="primary"  width="100%">
+            Examples
+          </Button>
+        </Link>
       </Stack>
     </Flex>
   );

@@ -1,6 +1,8 @@
 import Head from "next/head";
 import Image from "next/image";
+import Link from "next/link";
 import styles from "../styles/Home.module.css";
+import { Button } from "@chakra-ui/react";
 
 export default function Home() {
   return (
@@ -18,23 +20,18 @@ export default function Home() {
           </h1>
         </div>
         <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
+          <Link href="/about" className={styles.card}>
             <h2>About &rarr;</h2>
             <p>Find out more about this application.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
+          </Link>
+          <Link href="/vinyl" className={styles.card}>
             <h2>Vinyl List &rarr;</h2>
             <p>Get started editing your playlist now!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/canary/examples"
-            className={styles.card}
-          >
+          </Link>
+          <Link href="/examples" className={styles.card}>
             <h2>Examples &rarr;</h2>
             <p>See how others have used this tool.</p>
-          </a>
+          </Link>
         </div>
       </main>
 
