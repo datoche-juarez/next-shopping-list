@@ -2,7 +2,7 @@ import Meta from "../components/Meta";
 import Link from "next/link";
 import { useState, useEffect } from "react";
 
-import { Box, Button, Text, Stack } from "@chakra-ui/react";
+import { Box, Button, Text, Stack, Image } from "@chakra-ui/react";
 import creds from "../creds.js";
 
 const vinyl = ({ users }) => {
@@ -97,14 +97,19 @@ const vinyl = ({ users }) => {
           Vinyl List
         </Text>
         <Box boxShadow="xl" borderRadius="6" p="8" backgroundColor="bgGray.500">
-          <div>
+          <Box mt="10px" mb="10px">
             <Text as="b" fontSize="2xl">
               Playlist Info
             </Text>
             {playlistInfo && (
               <div>
                 {playlistInfo.images && (
-                  <img src={playlistInfo.images[0].url} />
+                  <Image
+                    src={playlistInfo.images[0].url}
+                    maxWidth={72}
+                    mt="10px"
+                    mb="10px"
+                  />
                 )}
                 <Text>Title: {playlistInfo.name}</Text>
                 {playlistInfo.description && (
@@ -113,7 +118,7 @@ const vinyl = ({ users }) => {
                 <Text>Owner: {playlistInfo.owner.display_name}</Text>
               </div>
             )}
-          </div>
+          </Box>
           <Button variant="primary" onClick={_getToken}>
             Fetch token
           </Button>
