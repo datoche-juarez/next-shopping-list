@@ -10,7 +10,7 @@ const vinyl = ({ users }) => {
   const clientSecret = creds.clientSecret;
 
   const [userId, setUserId] = useState(creds.userId);
-  const [playlistId, setplaylistId] = useState("64YuijCsO47lbVgdDhser0");
+  const [playlistId, setplaylistId] = useState(creds.playlistId);
   const [token, setToken] = useState("");
   const [playlistInfo, setPlaylistInfo] = useState("");
   const [userInfo, setUserInfo] = useState("");
