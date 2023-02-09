@@ -9,13 +9,20 @@ const vinyl = ({ users }) => {
   const clientId = creds.clientId;
   const clientSecret = creds.clientSecret;
 
-  const [userId, setUserId] = useState("3wWii5mrFLbS1uLvFJdgFO");
+  const [userId, setUserId] = useState(creds.userId);
+  const [playlistId, setplaylistId] = useState("3wWii5mrFLbS1uLvFJdgFO");
   const [token, setToken] = useState("");
   const [playlistInfo, setPlaylistInfo] = useState("");
+  const [userInfo, setUserInfo] = useState("");
 
   useEffect(() => {
     setUserId(userId);
     console.log("userId from useEffect: ", userId);
+  }, []);
+
+  useEffect(() => {
+    setplaylistId(playlistId);
+    console.log("playlistId from useEffect: ", playlistId);
   }, []);
 
   useEffect(() => {
@@ -41,12 +48,31 @@ const vinyl = ({ users }) => {
     return token;
   };
 
-  const _getPlaylistInfo = async (token, userId) => {
+  const getUserInfo = async (token, userId) => {
+    console.log("token inside getUserInfo function: ", token);
+    console.log("userId inside getUserInfo function: ", userId);
+
+    const result = await fetch(`https://api.spotify.com/v1/users/${userId}`, {
+      method: "GET",
+      headers: { Authorization: "Bearer " + token },
+    });
+
+    const data = await result.json();
+
+    console.log("userId inside getUserInfo function: ", userId);
+    console.log("token inside getUserInfo function: ", token);
+
+    console.log("getUserInfo data: ", data);
+    setUserInfo(data);
+    return data;
+  };
+
+  const _getPlaylistInfo = async (token, playlistId) => {
     console.log("token inside getPlaylistInfo function: ", token);
-    console.log("userId inside getPlaylistInfo function: ", userId);
+    console.log("playlistId inside getPlaylistInfo function: ", playlistId);
 
     const result = await fetch(
-      `https://api.spotify.com/v1/playlists/${userId}`,
+      `https://api.spotify.com/v1/playlists/${playlistId}`,
       {
         method: "GET",
         headers: { Authorization: "Bearer " + token },
@@ -55,10 +81,11 @@ const vinyl = ({ users }) => {
 
     const data = await result.json();
 
-    console.log("userID inside getPlaylistInfo function: ", userId);
+    console.log("playlistId inside getPlaylistInfo function: ", playlistId);
     console.log("token inside getPlaylistInfo function: ", token);
 
     console.log("getPlaylistInfo data: ", data);
+    setPlaylistInfo(data);
     return data;
   };
 
@@ -87,8 +114,11 @@ const vinyl = ({ users }) => {
           </Button>
           <Button
             variant="primary"
-            onClick={() => _getPlaylistInfo(token, userId)}
+            onClick={() => _getPlaylistInfo(token, playlistId)}
           >
+            Fetch playlist info
+          </Button>
+          <Button variant="primary" onClick={() => getUserInfo(token, userId)}>
             Fetch user info
           </Button>
           <Link href="/">
