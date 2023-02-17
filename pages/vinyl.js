@@ -49,27 +49,22 @@ const vinyl = ({ users }) => {
   };
 
   const getUserInfo = async (token, userId) => {
-    console.log("token inside getUserInfo function: ", token);
-    console.log("userId inside getUserInfo function: ", userId);
+    try {
+      const result = await fetch(`https://api.spotify.com/v1/users/${userId}`, {
+        method: "GET",
+        headers: { Authorization: "Bearer " + token },
+      });
 
-    const result = await fetch(`https://api.spotify.com/v1/users/${userId}`, {
-      method: "GET",
-      headers: { Authorization: "Bearer " + token },
-    });
+      const data = await result.json();
 
-    const data = await result.json();
-
-    console.log("userId inside getUserInfo function: ", userId);
-    console.log("token inside getUserInfo function: ", token);
-
-    console.log("getUserInfo data: ", data);
-    setUserInfo(data);
-    return data;
+      console.log("getUserInfo data: ", data);
+      setUserInfo(data);
+    } catch (error) {
+      console.log("Error: ", error);
+    }
   };
 
   const _getPlaylistInfo = async (token, playlistId) => {
-    console.log("token inside getPlaylistInfo function: ", token);
-    console.log("playlistId inside getPlaylistInfo function: ", playlistId);
     try {
       const result = await fetch(
         `https://api.spotify.com/v1/playlists/${playlistId}`,
@@ -80,9 +75,6 @@ const vinyl = ({ users }) => {
       );
 
       const data = await result.json();
-
-      console.log("playlistId inside getPlaylistInfo function: ", playlistId);
-      console.log("token inside getPlaylistInfo function: ", token);
 
       console.log("getPlaylistInfo data: ", data);
       setPlaylistInfo(data);
