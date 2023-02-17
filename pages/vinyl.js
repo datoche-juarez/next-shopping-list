@@ -70,23 +70,25 @@ const vinyl = ({ users }) => {
   const _getPlaylistInfo = async (token, playlistId) => {
     console.log("token inside getPlaylistInfo function: ", token);
     console.log("playlistId inside getPlaylistInfo function: ", playlistId);
+    try {
+      const result = await fetch(
+        `https://api.spotify.com/v1/playlists/${playlistId}`,
+        {
+          method: "GET",
+          headers: { Authorization: "Bearer " + token },
+        }
+      );
 
-    const result = await fetch(
-      `https://api.spotify.com/v1/playlists/${playlistId}`,
-      {
-        method: "GET",
-        headers: { Authorization: "Bearer " + token },
-      }
-    );
+      const data = await result.json();
 
-    const data = await result.json();
+      console.log("playlistId inside getPlaylistInfo function: ", playlistId);
+      console.log("token inside getPlaylistInfo function: ", token);
 
-    console.log("playlistId inside getPlaylistInfo function: ", playlistId);
-    console.log("token inside getPlaylistInfo function: ", token);
-
-    console.log("getPlaylistInfo data: ", data);
-    setPlaylistInfo(data);
-    return data;
+      console.log("getPlaylistInfo data: ", data);
+      setPlaylistInfo(data);
+    } catch (error) {
+      console.log("Error: ", error);
+    }
   };
 
   return (
@@ -117,19 +119,21 @@ const vinyl = ({ users }) => {
                     mb="10px"
                   />
                 )}
-                <Text>Title: {playlistInfo.name}</Text>
+                {playlistInfo.name && <Text>Title: {playlistInfo.name}</Text>}
                 {playlistInfo.description && (
                   <Text>Description: {playlistInfo.description}</Text>
                 )}
-                <Text>Owner: {playlistInfo.owner.display_name}</Text>
-                {playlistInfo.tracks.items && (
+                {playlistInfo.owner && (
+                  <Text>Owner: {playlistInfo.owner.display_name}</Text>
+                )}
+                {playlistInfo.tracks && (
                   <div>
                     {playlistInfo.tracks.items.map((track) => (
                       <Box
                         backgroundColor="bgGray.800"
                         border="1px solid black"
                       >
-                        <Checkbox m="10px">
+                        <Checkbox colorScheme="highlight" m="10px">
                           <Text as="b">
                             Artist: {""} {track.track.artists[0].name}
                           </Text>
