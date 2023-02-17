@@ -2,7 +2,7 @@ import Meta from "../components/Meta";
 import Link from "next/link";
 import { useState, useEffect } from "react";
 
-import { Box, Button, Text, Stack, Image } from "@chakra-ui/react";
+import { Box, Button, Text, Stack, Image, Checkbox } from "@chakra-ui/react";
 import creds from "../creds.js";
 
 const vinyl = ({ users }) => {
@@ -96,7 +96,13 @@ const vinyl = ({ users }) => {
         <Text as="b" fontSize="4xl">
           Vinyl List
         </Text>
-        <Box boxShadow="xl" borderRadius="6" p="8" backgroundColor="bgGray.500" border="1px solid black">
+        <Box
+          boxShadow="xl"
+          borderRadius="6"
+          p="8"
+          backgroundColor="bgGray.500"
+          border="1px solid black"
+        >
           <Box mt="10px" mb="10px">
             <Text as="b" fontSize="2xl">
               Playlist Info
@@ -116,6 +122,32 @@ const vinyl = ({ users }) => {
                   <Text>Description: {playlistInfo.description}</Text>
                 )}
                 <Text>Owner: {playlistInfo.owner.display_name}</Text>
+                {playlistInfo.tracks.items && (
+                  <div>
+                    {playlistInfo.tracks.items.map((track) => (
+                      <Box
+                        backgroundColor="bgGray.800"
+                        border="1px solid black"
+                      >
+                        <Checkbox m="10px">
+                          <Text as="b">
+                            Artist: {""} {track.track.artists[0].name}
+                          </Text>
+                          <Text as="b">
+                            Title: {""} {track.track.name}
+                          </Text>
+                          <Text as="b">
+                            Album: {""} {track.track.album.name}
+                          </Text>
+                          <Text as="b">
+                            Duration: {""} {track.track.duration_ms}
+                          </Text>
+                          {/* <Text as="b">Popularity: {""} {track.track.popularity}</Text> */}
+                        </Checkbox>
+                      </Box>
+                    ))}
+                  </div>
+                )}
               </div>
             )}
           </Box>
