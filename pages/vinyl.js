@@ -118,7 +118,7 @@ const vinyl = ({ users }) => {
                 {playlistInfo.owner && (
                   <Text>Owner: {playlistInfo.owner.display_name}</Text>
                 )}
-                {playlistInfo.tracks && (
+                {playlistInfo && playlistInfo.tracks ? (
                   <div>
                     {playlistInfo.tracks.items.map((track) => (
                       <Box
@@ -143,7 +143,7 @@ const vinyl = ({ users }) => {
                       </Box>
                     ))}
                   </div>
-                )}
+                ) : null}
               </div>
             )}
           </Box>
