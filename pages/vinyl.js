@@ -158,7 +158,7 @@ const vinyl = ({ users }) => {
               </Stack>
             </Box>
             <Box>
-            {/* <VinylTable3 /> */}
+            <VinylTable3 />
               <VinylTable2 />
               {/* <VinylTable /> */}
             </Box>

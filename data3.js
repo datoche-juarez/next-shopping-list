@@ -1,4 +1,4 @@
-export const myPlaylist = [
+export const myPlaylist = 
     {
         "collaborative": false,
         "description": "",
@@ -28825,6 +28825,5 @@ export const myPlaylist = [
         },
         "type": "playlist",
         "uri": "spotify:playlist:3wWii5mrFLbS1uLvFJdgFO"
-    }
-  ];
+    };
   

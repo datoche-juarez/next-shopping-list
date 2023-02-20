@@ -25,11 +25,16 @@ import { myPlaylist } from "../data3.js";
 
 export const VinylTable3 = (props) => {
   const [isLoading, setIsLoading] = useState(true);
+
   useEffect(() => {
     setTimeout(() => {
       setIsLoading(false);
     }, 1000);
   }, []);
+
+  useEffect(() => {
+    console.log("myPlaylist changed: ", myPlaylist);
+  }, [myPlaylist]);
 
   if (isLoading) {
     return (
@@ -65,70 +70,67 @@ export const VinylTable3 = (props) => {
         </Tr>
       </Thead>
       <Tbody>
-        {myPlaylist &&
-          myPlaylist.map((playlist) => (
-            <Tr key={playlist.id}>
-              {playlist.artist && playlist.image && (
+        {myPlaylist && myPlaylist.tracks ? (
+          <div>
+            {myPlaylist.tracks.items.map((track) => (
+              <Tr key={track.track.id}>
                 <Td>
                   <HStack spacing="3" minW="xs">
                     <Checkbox colorScheme="purple" />
                     <Avatar
-                      artist={playlist.artist}
-                      src={playlist.image}
+                      artist={track.track.artists[0].name}
+                      src={track.track.album.images[0].url}
                       boxSize="10"
                     />
                     <Box>
-                      <Text fontWeight="bold">{playlist.title}</Text>
+                      <Text fontWeight="bold">{track.track.name}</Text>
                       <Text fontSize="xs" color="muted">
-                        {playlist.artist}
+                        {track.track.artists[0].name}
                       </Text>
                     </Box>
                   </HStack>
                 </Td>
-              )}
-
-              {/* <Td>
-              <Text color="muted">{playlist.title}</Text>
-            </Td> */}
-              {playlist.album && (
+                {/* <Td>
+                  <Text color="muted">{track.track.artists[0].uri}</Text>
+                </Td> */}
                 <Td>
                   <Text fontWeight="bold" minW="xs" color="primary.200">
-                    {playlist.album}
+                    {track.track.album.name}
                   </Text>
                 </Td>
-              )}
-
-              <Td>
-                <Badge
-                  size="sm"
-                  colorScheme={playlist.status === "active" ? "green" : "red"}
-                >
-                  {playlist.status}
-                </Badge>
-              </Td>
-              {playlist.rating && (
+                <Td>
+                  <Badge
+                    size="sm"
+                    colorScheme={
+                      track.is_local === "true" ? "red" : "green"
+                    }
+                  >
+                    {track.is_local === "true" ? "Local" : "Spotify"}
+                  </Badge>
+                </Td>
                 <Td>
                   <Text color="muted">
-                    <Rating defaultValue={playlist.rating} size="xl" />
+                    <Rating defaultValue={myPlaylist.rating} size="xl" />
                   </Text>
                 </Td>
-              )}
-              <Td>
-                <HStack spacing="1">
-                  <IconButton
-                    icon={<FiTrash2 fontSize="1.25rem" />}
-                    variant="ghost"
-                    aria-label="Delete playlist"
-                  />
-                  <IconButton
-                    icon={<FiEdit2 fontSize="1.25rem" />}
-                    variant="ghost"
-                    aria-label="Edit playlist"
-                  />
-                </HStack>
-              </Td>
-            </Tr>
-          ))}
+                <Td>
+                  <HStack spacing="1">
+                    <IconButton
+                      icon={<FiTrash2 fontSize="1.25rem" />}
+                      variant="ghost"
+                      aria-label="Delete myPlaylist"
+                    />
+                    <IconButton
+                      icon={<FiEdit2 fontSize="1.25rem" />}
+                      variant="ghost"
+                      aria-label="Edit myPlaylist"
+                    />
+                  </HStack>
+                </Td>
+              </Tr>
+            ))}
+          </div>
+        ) : null}
       </Tbody>
     </Table>
   );
