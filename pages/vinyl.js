@@ -146,7 +146,7 @@ const vinyl = ({ users }) => {
                 }}
                 justify="space-between"
               >
-                <Text fontSize="lg" fontWeight="medium">
+                <Text fontSize="lg" fontWeight="bold">
                   Tracks
                 </Text>
                 <InputGroup maxW="xs">
@@ -166,7 +166,7 @@ const vinyl = ({ users }) => {
         </Box>
       </Container>
       <Stack p="32px">
-        <Text as="b" fontSize="4xl">
+        <Text as="b" fontSize="4xl" fontWeight="semibold">
           Vinyl List
         </Text>
         <Box

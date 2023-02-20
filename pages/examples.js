@@ -8,11 +8,11 @@ const examples = () => {
     <div as="flex" color="primary.main">
       <Meta title="About" />
       <Stack p="32px">
-        <Text as="b" fontSize="4xl" pl="8">
+        <Text as="b" fontSize="4xl" fontWeight="semibold" pl="8">
           Examples
         </Text>
         <Box borderRadius="6" p="8" backgroundColor="bgGray.main">
-          <Text fontSize={{ sm: "xl", md: "2xl" }}>
+          <Text fontSize={{ sm: "xl", md: "2xl" }} fontWeight="light">
             Examples section goes here...
           </Text>
           <Link href="/">

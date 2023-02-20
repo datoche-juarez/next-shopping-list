@@ -8,11 +8,11 @@ const about = () => {
     <div as="flex" color="primary.main">
       <Meta title="About" />
       <Stack p="32px">
-        <Text as="b" fontSize="4xl" pl="8">
+        <Text as="b" fontSize="4xl" fontWeight="semibold" pl="8">
           About
         </Text>
         <Box borderRadius="6" p="8" backgroundColor="bgGray.main">
-          <Text fontSize={{ sm: "md", md: "xl" }}>
+          <Text fontSize={{ sm: "md", md: "xl" }} fontWeight="light">
             Introducing the ultimate tool for music producers and playlist
             curators. With or interactive Spotify playlist tool, you can easily
             keep track of albums you want to purchase. Simply create a playlist
