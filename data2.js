@@ -1,4 +1,4 @@
-export const playlist = [
+export const playlists = [
     {
       id: "1",
       artist: "Miles Davis",

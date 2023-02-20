@@ -21,6 +21,7 @@ import {
 
 import { FiSearch } from "react-icons/fi";
 import { VinylTable } from "../components/VinylTable";
+import { VinylTable2 } from "../components/VinylTable2";
 
 import creds from "../creds.js";
 
@@ -156,6 +157,7 @@ const vinyl = ({ users }) => {
               </Stack>
             </Box>
             <Box>
+              <VinylTable2 />
               <VinylTable />
             </Box>
             <Box
