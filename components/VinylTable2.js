@@ -52,12 +52,12 @@ export const VinylTable2 = (props) => {
             <HStack spacing="3">
               <Checkbox />
               <HStack spacing="1">
-                <Text>artist</Text>
+                <Text>Title</Text>
                 <Icon as={IoArrowDown} color="muted" boxSize="4" />
               </HStack>
             </HStack>
           </Th>
-          <Th>Title</Th>
+          {/* <Th>Title</Th> */}
           <Th>Album</Th>
           <Th>Role</Th>
           <Th>Rating</Th>
@@ -68,20 +68,20 @@ export const VinylTable2 = (props) => {
         {playlists.map((playlist) => (
           <Tr key={playlist.id}>
             <Td>
-              <HStack spacing="3">
+              <HStack spacing="3" minW="xs">
                 <Checkbox />
-                <Avatar artist={playlist.artist} src={playlist.avatarUrl} boxSize="10" />
+                <Avatar artist={playlist.artist} src={playlist.image} boxSize="10" />
                 <Box>
-                  <Text fontWeight="medium">{playlist.artist}</Text>
-                  {/* <Text color="muted">{playlist.handle}</Text> */}
+                  <Text fontWeight="bold">{playlist.title}</Text>
+                  <Text fontSize="xs" color="muted">{playlist.artist}</Text>
                 </Box>
               </HStack>
             </Td>
-            <Td>
+            {/* <Td>
               <Text color="muted">{playlist.title}</Text>
-            </Td>
+            </Td> */}
             <Td>
-              <Text color="muted">{playlist.album}</Text>
+              <Text fontWeight="bold" minW="xs" color="primary.200">{playlist.album}</Text>
             </Td>
             <Td>
               <Badge
