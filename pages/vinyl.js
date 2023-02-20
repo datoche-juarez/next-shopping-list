@@ -158,7 +158,7 @@ const vinyl = ({ users }) => {
             </Box>
             <Box>
               <VinylTable2 />
-              <VinylTable />
+              {/* <VinylTable /> */}
             </Box>
             <Box
               px={{
@@ -182,8 +182,8 @@ const vinyl = ({ users }) => {
                   }}
                   variant="secondary"
                 >
-                  <Button>Previous</Button>
-                  <Button>Next</Button>
+                  <Button variant="primary">Previous</Button>
+                  <Button variant="primary">Next</Button>
                 </ButtonGroup>
               </HStack>
             </Box>
