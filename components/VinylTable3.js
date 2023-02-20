@@ -70,9 +70,8 @@ export const VinylTable3 = (props) => {
         </Tr>
       </Thead>
       <Tbody>
-        {myPlaylist && myPlaylist.tracks ? (
-          <div>
-            {myPlaylist.tracks.items.map((track) => (
+        {myPlaylist && myPlaylist.tracks
+          ? myPlaylist.tracks.items.map((track) => (
               <Tr key={track.track.id}>
                 <Td>
                   <HStack spacing="3" minW="xs">
@@ -101,9 +100,7 @@ export const VinylTable3 = (props) => {
                 <Td>
                   <Badge
                     size="sm"
-                    colorScheme={
-                      track.is_local === "true" ? "red" : "green"
-                    }
+                    colorScheme={track.is_local === "true" ? "red" : "green"}
                   >
                     {track.is_local === "true" ? "Local" : "Spotify"}
                   </Badge>
@@ -128,9 +125,8 @@ export const VinylTable3 = (props) => {
                   </HStack>
                 </Td>
               </Tr>
-            ))}
-          </div>
-        ) : null}
+            ))
+          : null}
       </Tbody>
     </Table>
   );
