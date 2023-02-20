@@ -70,10 +70,16 @@ export const VinylTable2 = (props) => {
             <Td>
               <HStack spacing="3" minW="xs">
                 <Checkbox />
-                <Avatar artist={playlist.artist} src={playlist.image} boxSize="10" />
+                <Avatar
+                  artist={playlist.artist}
+                  src={playlist.image}
+                  boxSize="10"
+                />
                 <Box>
                   <Text fontWeight="bold">{playlist.title}</Text>
-                  <Text fontSize="xs" color="muted">{playlist.artist}</Text>
+                  <Text fontSize="xs" color="muted">
+                    {playlist.artist}
+                  </Text>
                 </Box>
               </HStack>
             </Td>
@@ -81,7 +87,9 @@ export const VinylTable2 = (props) => {
               <Text color="muted">{playlist.title}</Text>
             </Td> */}
             <Td>
-              <Text fontWeight="bold" minW="xs" color="primary.200">{playlist.album}</Text>
+              <Text fontWeight="bold" minW="xs" color="primary.200">
+                {playlist.album}
+              </Text>
             </Td>
             <Td>
               <Badge
