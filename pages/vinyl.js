@@ -116,6 +116,7 @@ const vinyl = ({ users }) => {
           base: "0",
           md: 8,
         }}
+        marginLeft="10"
       >
         <Box
           bg="bg-surface"
@@ -154,7 +155,7 @@ const vinyl = ({ users }) => {
                 </InputGroup>
               </Stack>
             </Box>
-            <Box overflowX="auto">
+            <Box>
               <VinylTable />
             </Box>
             <Box
