@@ -8,10 +8,10 @@ const examples = () => {
     <div as="flex" color="primary.main">
       <Meta title="About" />
       <Stack p="32px">
-        <Text as="b" fontSize="4xl">
+        <Text as="b" fontSize="4xl" pl="8">
           Examples
         </Text>
-        <Box boxShadow="xl" borderRadius="6" p="8" backgroundColor="bgGray.500" border="1px solid black">
+        <Box borderRadius="6" p="8" backgroundColor="bgGray.main">
           <Text fontSize={{ sm: "xl", md: "2xl" }}>
             Examples section goes here...
           </Text>

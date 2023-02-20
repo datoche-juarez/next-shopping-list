@@ -75,7 +75,7 @@ export const newTheme = extendTheme({
       900: "#1f0200",
     },
     bgGray: {
-      main: "#404040",
+      main: "#282626",
       50: "#fbf0f2",
       100: "#dcd8d9",
       200: "#bfbfbf",

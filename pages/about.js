@@ -8,10 +8,10 @@ const about = () => {
     <div as="flex" color="primary.main">
       <Meta title="About" />
       <Stack p="32px">
-        <Text as="b" fontSize="4xl">
+        <Text as="b" fontSize="4xl" pl="8">
           About
         </Text>
-        <Box boxShadow="xl" borderRadius="6" p="8" backgroundColor="bgGray.500" border="1px solid black">
+        <Box borderRadius="6" p="8" backgroundColor="bgGray.main">
           <Text fontSize={{ sm: "md", md: "xl" }}>
             Introducing the ultimate tool for music producers and playlist
             curators. With or interactive Spotify playlist tool, you can easily
