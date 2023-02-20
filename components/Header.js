@@ -1,15 +1,16 @@
-import styles from "../styles/Home.module.css";
+import { Text, Stack } from "@chakra-ui/react";
 
 const Header = () => {
-    return (
-        // <div style={{ padding: "10px", textAlign: "center" }}>
-        <div className={styles.header}>
-            <h1>
-                <span>⚡️ Vinyl Shopping List ⚡️</span>
-            </h1>
-            <p>An interactive tool for Spotify playlists.</p>
-        </div>
-    );
+  return (
+    <Stack backgroundColor="#131214" p="2rem" textAlign="center">
+      <Text fontWeight="light" fontSize="md">
+        ⚡️ Vinyl Shopping List ⚡️
+      </Text>
+      <Text fontWeight="light" fontSize="sm">
+        An interactive tool for Spotify playlists.
+      </Text>
+    </Stack>
+  );
 };
 
 export default Header;

@@ -12,12 +12,6 @@
   align-items: center;
 }
 
-.header {
-  background-color: #131214;
-  padding: 2rem;
-  text-align: center;
-}
-
 .footer {
   display: flex;
   flex: 1;

@@ -158,36 +158,9 @@ const vinyl = ({ users }) => {
               </Stack>
             </Box>
             <Box>
-            <VinylTable3 />
-              <VinylTable2 />
+              <VinylTable3 />
+              {/* <VinylTable2 /> */}
               {/* <VinylTable /> */}
-            </Box>
-            <Box
-              px={{
-                base: "4",
-                md: "6",
-              }}
-              pb="5"
-            >
-              <HStack spacing="3" justify="space-between">
-                {!isMobile && (
-                  <Text color="muted" fontSize="sm">
-                    Showing 1 to 5 of 42 results
-                  </Text>
-                )}
-                <ButtonGroup
-                  spacing="3"
-                  justifyContent="space-between"
-                  width={{
-                    base: "full",
-                    md: "auto",
-                  }}
-                  variant="secondary"
-                >
-                  <Button variant="primary">Previous</Button>
-                  <Button variant="primary">Next</Button>
-                </ButtonGroup>
-              </HStack>
             </Box>
           </Stack>
         </Box>
