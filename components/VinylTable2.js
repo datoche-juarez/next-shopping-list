@@ -50,7 +50,7 @@ export const VinylTable2 = (props) => {
         <Tr>
           <Th>
             <HStack spacing="3">
-              <Checkbox />
+              <Checkbox colorScheme="purple" />
               <HStack spacing="1">
                 <Text>Title</Text>
                 <Icon as={IoArrowDown} color="muted" boxSize="4" />
@@ -69,7 +69,7 @@ export const VinylTable2 = (props) => {
           <Tr key={playlist.id}>
             <Td>
               <HStack spacing="3" minW="xs">
-                <Checkbox />
+                <Checkbox colorScheme="purple" />
                 <Avatar
                   artist={playlist.artist}
                   src={playlist.image}

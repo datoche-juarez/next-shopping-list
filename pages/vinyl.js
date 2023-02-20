@@ -146,13 +146,13 @@ const vinyl = ({ users }) => {
                 justify="space-between"
               >
                 <Text fontSize="lg" fontWeight="medium">
-                  Members
+                  Tracks
                 </Text>
                 <InputGroup maxW="xs">
                   <InputLeftElement pointerEvents="none">
                     <Icon as={FiSearch} color="muted" boxSize="5" />
                   </InputLeftElement>
-                  <Input placeholder="Search" />
+                  <Input focusBorderColor="primary.main" placeholder="Search" />
                 </InputGroup>
               </Stack>
             </Box>
