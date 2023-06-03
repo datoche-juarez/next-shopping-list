@@ -26,7 +26,7 @@ import { VinylTable3 } from "../components/VinylTable3";
 
 import creds from "../creds.js";
 
-const vinyl = ({ users }) => {
+const Vinyl = ({ users }) => {
   const isMobile = useBreakpointValue({ base: true, md: false });
 
   const clientId = creds.clientId;
@@ -41,12 +41,12 @@ const vinyl = ({ users }) => {
   useEffect(() => {
     setUserId(userId);
     console.log("userId from useEffect: ", userId);
-  }, []);
+  }, [userId]);
 
   useEffect(() => {
     setplaylistId(playlistId);
     console.log("playlistId from useEffect: ", playlistId);
-  }, []);
+  }, [playlistId]);
 
   useEffect(() => {
     console.log("token from useEffect: ", token);
@@ -185,6 +185,7 @@ const vinyl = ({ users }) => {
                 {playlistInfo.images && (
                   <Image
                     src={playlistInfo.images[0].url}
+                    alt="playlist cover"
                     maxWidth={72}
                     mt="10px"
                     mb="10px"
@@ -201,6 +202,7 @@ const vinyl = ({ users }) => {
                   <div>
                     {playlistInfo.tracks.items.map((track) => (
                       <Box
+                        key={track.track.id}
                         backgroundColor="bgGray.800"
                         border="1px solid black"
                       >
@@ -247,7 +249,7 @@ const vinyl = ({ users }) => {
   );
 };
 
-export default vinyl;
+export default Vinyl;
 
 export async function getStaticProps() {
   const response = await fetch("https://jsonplaceholder.typicode.com/users");

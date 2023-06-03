@@ -3,7 +3,7 @@ import Link from "next/link";
 
 import { Box, Button, Text, Stack } from "@chakra-ui/react";
 
-const examples = () => {
+const Examples = () => {
   return (
     <div as="flex" color="primary.main">
       <Meta title="About" />
@@ -24,4 +24,4 @@ const examples = () => {
   );
 };
 
-export default examples;
+export default Examples;

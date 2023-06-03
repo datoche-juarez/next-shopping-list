@@ -3,7 +3,7 @@ import Link from "next/link";
 
 import { Box, Button, Text, Stack } from "@chakra-ui/react";
 
-const about = () => {
+const About = () => {
   return (
     <div as="flex" color="primary.main">
       <Meta title="About" />
@@ -23,11 +23,11 @@ const about = () => {
             No more tedious manual editing or lost lists. Our tool will
             duplicate your playlist and turn it into a shopping wishlist that
             can be easily updated as you purchase albums. Mark off the albums
-            you've bought, and keep your original playlist intact.
+            you&#39;ve bought, and keep your original playlist intact.
             <br />
             <br />
             Our user-friendly interface makes it easy to keep track of your
-            progress and stay organized. Whether you're a professional music
+            progress and stay organized. Whether you&#39;re a professional music
             producers or just someone who loves creating playlists, our tool is
             the perfect solution for streamlining your workflow and keeping your
             music collection up-to-date.
@@ -47,4 +47,4 @@ const about = () => {
   );
 };
 
-export default about;
+export default About;
