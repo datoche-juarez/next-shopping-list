@@ -40,7 +40,7 @@ export const VinylTable3 = (props) => {
 
   useEffect(() => {
     setTrackCount(myPlaylist.tracks.total);
-  }, [myPlaylist]);
+  }, []);
 
   if (isLoading) {
     return (
